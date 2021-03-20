@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="510.0" prefWidth="1225.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CalendarController">
+   <children>
+      <Label layoutX="36.0" layoutY="36.0" text="Appointment Calendar" textFill="#787777">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="1135.0" layoutY="463.0" maxWidth="70.0" minWidth="70.0" mnemonicParsing="false" onAction="#homeButtonClicked" prefWidth="70.0" text="Home" />
+      <AnchorPane layoutX="56.0" layoutY="120.0" prefHeight="266.0" prefWidth="432.0" style="-fx-border-color: Slategray; -fx-border-radius: 10; -fx-border-width: 2;" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="620.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Label layoutX="29.0" layoutY="30.0" text="Upcoming Appointments (Next 7 Days):" textFill="#787777">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TableView fx:id="weeklyAppointmentsTable" layoutX="23.0" layoutY="73.0" prefHeight="200.0" prefWidth="539.0">
+              <columns>
+                <TableColumn fx:id="weeklyCustomerCol" prefWidth="105.0" text="Customer" />
+                <TableColumn fx:id="weeklyTitleCol" prefWidth="120.0" text="Title" />
+                  <TableColumn fx:id="weeklyDateCol" minWidth="0.0" prefWidth="84.0" text="Date" />
+                  <TableColumn fx:id="weeklyStartCol" prefWidth="111.0" text="Start Time" />
+                  <TableColumn fx:id="weeklyEndCol" minWidth="0.0" prefWidth="118.0" text="End Time" />
+              </columns>
+            </TableView>
+            <Button layoutX="492.0" layoutY="290.0" maxWidth="70.0" minWidth="70.0" mnemonicParsing="false" onAction="#weeklyDetailsButtonClicked" prefWidth="70.0" text="Details" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="665.0" layoutY="122.0" prefHeight="258.0" prefWidth="468.0" style="-fx-border-color: Slategray; -fx-border-radius: 10; -fx-border-width: 2;" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="620.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Label layoutX="25.0" layoutY="30.0" text="Appointments By Month: " textFill="#787777">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TableView fx:id="monthlyAppointmentsTable" layoutX="23.0" layoutY="73.0" prefHeight="200.0" prefWidth="539.0">
+              <columns>
+                <TableColumn fx:id="monthlyCustomerCol" prefWidth="103.0" text="Customer" />
+                <TableColumn fx:id="monthlyTitleCol" prefWidth="143.0" text="Title" />
+                  <TableColumn fx:id="monthlyDateCol" prefWidth="117.0" text="Date" />
+                  <TableColumn fx:id="monthlyStartCol" prefWidth="85.0" text="Start Time" />
+                  <TableColumn fx:id="monthlyEndCol" prefWidth="90.0" text="End Time" />
+              </columns>
+            </TableView>
+            <ListView fx:id="monthList" layoutX="327.0" layoutY="25.0" prefHeight="25.0" prefWidth="70.0" />
+            <Button layoutX="492.0" layoutY="295.0" maxWidth="70.0" minWidth="70.0" mnemonicParsing="false" onAction="#monthlyDetailsButtonClicked" prefWidth="70.0" text="Details" />
+            <Button layoutX="492.0" layoutY="25.0" maxWidth="70.0" minWidth="70.0" mnemonicParsing="false" onAction="#viewButtonClicked" prefWidth="70.0" text="View" />
+            <TextField fx:id="yearText" layoutX="411.0" layoutY="25.0" prefHeight="25.0" prefWidth="70.0" />
+         </children>
+      </AnchorPane>
+      <Label fx:id="warningLabel" layoutX="22.0" layoutY="467.0" prefHeight="17.0" prefWidth="719.0" textFill="RED" />
+   </children>
+</AnchorPane>

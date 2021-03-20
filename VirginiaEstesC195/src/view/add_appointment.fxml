@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="625.0" prefWidth="675.0" style="-fx-background-color: f2f2f2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddAppointmentController">
+   <children>
+      <GridPane hgap="10.0" layoutX="22.0" layoutY="88.0" prefHeight="464.0" prefWidth="631.0" style="-fx-border-color: darkgray; -fx-border-width: 2; -fx-border-radius: 10;" vgap="10.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="76.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="247.0" minWidth="10.0" prefWidth="117.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="247.0" minWidth="10.0" prefWidth="34.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="130.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.0" minWidth="10.0" prefWidth="36.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="213.0" minWidth="10.0" prefWidth="168.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="64.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="64.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="129.0" minHeight="3.0" prefHeight="29.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="173.0" minHeight="0.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="170.0" minHeight="10.0" prefHeight="98.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="289.0" minHeight="10.0" prefHeight="216.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Title:" textFill="#4d4c4c" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+            <Label text="Customer:" textFill="#4d4c4c" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="55.0" text="Location: " textFill="#4d4c4c" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+            <Label text="Contact: " textFill="#4d4c4c" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+            <Label text="Type: " textFill="#4d4c4c" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+            <Label alignment="TOP_LEFT" prefHeight="102.0" prefWidth="81.0" text="Description: " textFill="#4d4c4c" GridPane.rowIndex="4" />
+            <Label text="URL: " textFill="#4d4c4c" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <TextField fx:id="titleText" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+            <TextField fx:id="locationText" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+            <TextField fx:id="typeText" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+            <TextField fx:id="contactText" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+            <TextField fx:id="URLText" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+            <ListView fx:id="customerList" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+            <TextArea fx:id="descriptionText" prefHeight="55.0" prefWidth="522.0" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="4" />
+            <AnchorPane prefHeight="276.0" prefWidth="607.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="5">
+               <children>
+                  <Label layoutX="-2.0" layoutY="23.0" prefHeight="19.0" prefWidth="617.0" text="DATE                                                                                                                                                              " textFill="#4d4c4c" underline="true">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="57.0" text="Month:" textFill="#4d4c4c" />
+                  <ListView fx:id="monthList" layoutX="44.0" layoutY="53.0" prefHeight="25.0" prefWidth="58.0" />
+                  <Label layoutX="194.0" layoutY="57.0" text="Day:" textFill="#4d4c4c" />
+                  <TextField fx:id="dayText" layoutX="228.0" layoutY="53.0" prefHeight="25.0" prefWidth="51.0" promptText="DD" />
+                  <Label layoutX="365.0" layoutY="57.0" text="Year: " textFill="#4d4c4c" />
+                  <TextField fx:id="startHourText" layoutX="31.0" layoutY="152.0" prefHeight="25.0" prefWidth="42.0" promptText="HH" />
+                  <Label layoutX="-2.0" layoutY="119.0" text="TIME                                                                                                                                                              " textFill="#4d4c4c" underline="true">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="-3.0" layoutY="156.0" text="Start: " textFill="#4c4d4d" />
+                  <TextField fx:id="endHourText" layoutX="308.0" layoutY="152.0" prefHeight="25.0" prefWidth="42.0" promptText="HH" />
+                  <Label layoutX="279.0" layoutY="156.0" text="End: " textFill="#4d4c4c" />
+                  <TextField fx:id="yearText" layoutX="400.0" layoutY="53.0" prefHeight="25.0" prefWidth="58.0" promptText="YYYY" />
+                  <Label layoutX="78.0" layoutY="156.0" prefHeight="17.0" prefWidth="4.0" text=":">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="startMinText" layoutX="86.0" layoutY="152.0" prefHeight="25.0" prefWidth="42.0" promptText="MM" />
+                  <Label layoutX="356.0" layoutY="156.0" text=":">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="endMinText" layoutX="365.0" layoutY="152.0" prefHeight="25.0" prefWidth="42.0" promptText="MM" />
+               </children>
+            </AnchorPane>
+            <Label prefHeight="19.0" prefWidth="611.0" text="DETAILS                                                                                                                                                         " textFill="#4d4c4c" underline="true" GridPane.columnSpan="2147483647">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </GridPane>
+      <Label layoutX="22.0" layoutY="34.0" text="Add Appointment" textFill="#787777">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="cancelButton" layoutX="583.0" layoutY="578.0" maxWidth="70.0" minWidth="70.0" mnemonicParsing="false" onAction="#cancelButtonClicked" prefWidth="70.0" text="Cancel" />
+      <Button fx:id="saveButton" layoutX="502.0" layoutY="578.0" maxWidth="70.0" minWidth="70.0" mnemonicParsing="false" onAction="#saveButtonClicked" prefWidth="70.0" text="Save" />
+      <Label layoutX="22.0" layoutY="582.0" prefHeight="17.0" prefWidth="447.0" textFill="RED" fx:id="notificationLabel"/>
+   </children>
+</AnchorPane>
